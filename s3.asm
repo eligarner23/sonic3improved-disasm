@@ -20602,8 +20602,11 @@ Sonic_Transform:
 
 
 Sonic_Super:
-		cmpi.b	#1,(Super_Sonic_palette).w	; is Super Sonic's transformation sequence finished?
-	    beq.s	return_1ABA4			; if not, branch
+		tst.b	(Super_Sonic_Knux_flag).w
+		beq.w	locret_12B26
+		tst.b	(Update_HUD_timer).w
+		beq.s	loc_12AD2
+		subq.w	#1,(Super_frame_count).w
 		bpl.w	locret_12B26
 		move.w	#60,(Super_frame_count).w
 		tst.w	(Ring_count).w
