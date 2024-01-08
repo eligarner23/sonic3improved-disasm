@@ -157,6 +157,11 @@ button_B:			EQU	4
 button_C:			EQU	5
 button_A:			EQU	6
 button_start:			EQU	7
+button_X:          EQU 8
+button_Y:          EQU 9
+button_Z:          EQU 10
+button_mode:        EQU 11  ; Add the mode button
+
 ; Buttons masks (1 << x == pow(2, x))
 button_up_mask:			EQU	1<<button_up	; $01
 button_down_mask:		EQU	1<<button_down	; $02
@@ -166,6 +171,10 @@ button_B_mask:			EQU	1<<button_B	; $10
 button_C_mask:			EQU	1<<button_C	; $20
 button_A_mask:			EQU	1<<button_A	; $40
 button_start_mask:		EQU	1<<button_start	; $80
+button_X_mask:		EQU 1<<button_X    ; $100
+button_Y_mask:		EQU 1<<button_Y    ; $200
+button_Z_mask:		EQU 1<<button_Z    ; $400
+button_mode_mask:		EQU 1<<button_mode  ; Add the mode button mask
 
 ; ---------------------------------------------------------------------------
 ; Player Status Variables
